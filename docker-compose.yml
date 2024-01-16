@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  app:
+    image: nginx:latest
+    volumes:
+      - ./app:/usr/share/nginx/html
+    ports:
+      - "8081:80"  # Utilizando a porta 8081 para evitar a porta 80
+    networks:
+      - meu-projeto-net
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "8080:8080"  # Utilizando a porta 8080 para evitar a porta 80
+    depends_on:
+      - app
+    networks:
+      - meu-projeto-net
+
+networks:
+  meu-projeto-net:
+    driver: bridge
