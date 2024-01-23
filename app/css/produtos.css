@@ -1,4 +1,7 @@
 /*Main Products style*/
+body{
+  font-family: 'Montserrat', sans-serif;
+}
 .produtos{
   width: 70%;
   margin: 0 auto;

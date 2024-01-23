@@ -1,4 +1,7 @@
 /*Header style*/
+body{
+  font-family: 'Montserrat', sans-serif;
+}
 header{
   background-color: #bbbbbb;
   padding: 20px 0;
